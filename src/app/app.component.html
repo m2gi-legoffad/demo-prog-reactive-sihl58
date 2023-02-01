@@ -1,0 +1,14 @@
+<h1>Démo programmation par flux</h1>
+<section>
+  <button (click)="refresh()">Rafraichir</button>
+</section>
+<hr />
+<ul>
+  <li *ngFor="let U of usersObs | async">
+    <button (click)="delete(U)">suppr</button>
+    {{ U.login }}
+  </li>
+</ul>
+
+Les utilisateurs non grata :
+<pre>{{ Ldeleted | async | json }}</pre>
